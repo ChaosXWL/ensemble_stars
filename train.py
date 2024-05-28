@@ -74,7 +74,7 @@ if __name__ == '__main__':
     data_loader = DataLoader(dataset, batch_size=10, shuffle=True)
     max_epoch = 100
     for epoch in range(1, max_epoch + 1):
-        for i, (image, label) in enumerate(data_loader):
+        for i, (image, label, _) in enumerate(data_loader):
             image, label = image.to(device), label.to(device)
             out = net(image)
             train_loss = loss_fun(out, label)
