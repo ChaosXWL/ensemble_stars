@@ -12,7 +12,7 @@ if __name__ == '__main__':
     os.makedirs(result_dir, exist_ok=True)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     net = Net().to(device)
-    weights=os.path.join(result_dir, "epoch_10.pth")
+    weights=os.path.join(result_dir, "epoch_59.pth")
     if os.path.exists(weights):
         net.load_state_dict(torch.load(weights))
         print('loading successfully')
@@ -72,8 +72,8 @@ if __name__ == '__main__':
     es_dict = {v: k for k, v in label_to_name.items()}
     dataset = MyDataset('./es_data', es_dict)
     data_loader = DataLoader(dataset, batch_size=10, shuffle=True)
-    max_epoch = 100
-    for epoch in range(1, max_epoch + 1):
+    max_epoch = 300
+    for epoch in range(60, max_epoch + 1):
         for i, (image, label, _) in enumerate(data_loader):
             image, label = image.to(device), label.to(device)
             out = net(image)

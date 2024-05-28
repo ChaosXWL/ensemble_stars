@@ -15,14 +15,14 @@ class MyDataset(Dataset):
     def __init__(self, img_path, es_dict):
         img_files = []
         for root, dirs, files in os.walk(img_path):
-            load_num = 0
+            # load_num = 0
             for file in files:
                 if ".jpg" not in file:
                     continue
                 img_files.append(osp.join(root, file))
-                load_num += 1
-                if load_num > 5:
-                    break
+                # load_num += 1
+                # if load_num > 5:
+                #     break
         self.dataset = img_files
         self.es_dict = es_dict
 
@@ -89,7 +89,8 @@ if __name__ == '__main__':
         "45": "仁兔成鸣",
         "46": "日日树涉",
         "47": "三毛缟斑",
-        "48": "深海奏汰"
+        "48": "深海奏汰",
+        "49": "其他"
     }
     es_dict = {v: k for k, v in label_to_name.items()}
     # print(es_dict)

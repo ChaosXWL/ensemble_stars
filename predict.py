@@ -61,7 +61,8 @@ if __name__ == '__main__':
         "45": "仁兔成鸣",
         "46": "日日树涉",
         "47": "三毛缟斑",
-        "48": "深海奏汰"
+        "48": "深海奏汰",
+        "49": "其他"
     }
     es_dict = {v: k for k, v in label_to_name.items()}
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
