@@ -36,7 +36,7 @@ class MyDataset(Dataset):
         img = cv2.imread(img_path)
         img = cv2.resize(img, (500, 500))
 
-        return tf(img), torch.tensor(int(self.es_dict[label]))
+        return tf(img), torch.tensor(int(self.es_dict[label])), osp.splitext(osp.basename(img_path))[0]
 
 
 if __name__ == '__main__':
