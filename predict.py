@@ -15,7 +15,7 @@ if __name__ == '__main__':
     os.makedirs(predict_dir, exist_ok=True)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     net = Net().to(device)
-    weights = os.path.join(result_dir, "epoch_210.pth")
+    weights = os.path.join(result_dir, "epoch_20.pth")
     net.load_state_dict(torch.load(weights))
     net.eval()
     dataset = MyDataset('./es_data', es_dict)
