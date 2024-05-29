@@ -5,6 +5,7 @@ import torch
 from es_dataset import *
 from es_net import *
 from torch.utils.data import DataLoader
+from config import *
 
 
 if __name__ == '__main__':
