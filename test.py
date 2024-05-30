@@ -16,7 +16,7 @@ if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     net = Net().to(device)
     weights = os.path.join(pth_dir, "epoch_20.pth")
-    net.load_state_dict(torch.load(weights))
+    net.load_state_dict(torch.load(weights, map_location=device))
     net.eval()
     dataset = TestDataset('./test_data', es_dict)
     data_loader = DataLoader(dataset, batch_size=10, shuffle=True)
